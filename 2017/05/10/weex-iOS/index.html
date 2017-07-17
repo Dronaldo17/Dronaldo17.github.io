@@ -6,14 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 天生DR</title>
+  <title>初探Weex iOS篇(一) | 天生DR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="天生DR">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="iOS准备阶段  要在iOS端”玩起” Weex,至少要知道或者熟悉以下知识:   1.首先要清楚一件事情就是,Weex的UI是原生控件,并不是纯WebView，不是Hybrid方案!   2.其次得有相应的iOS开发知识,知道从前有一门叫 SmtallTalk,现在叫做Objective-C简称OC的编程语言(Swift也可以编写iOS程序,但是鉴于Weex代码是Objective-C版本,且">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初探Weex iOS篇(一)">
+<meta property="og:url" content="http://yoursite.com/2017/05/10/weex-iOS/index.html">
 <meta property="og:site_name" content="天生DR">
+<meta property="og:description" content="iOS准备阶段  要在iOS端”玩起” Weex,至少要知道或者熟悉以下知识:   1.首先要清楚一件事情就是,Weex的UI是原生控件,并不是纯WebView，不是Hybrid方案!   2.其次得有相应的iOS开发知识,知道从前有一门叫 SmtallTalk,现在叫做Objective-C简称OC的编程语言(Swift也可以编写iOS程序,但是鉴于Weex代码是Objective-C版本,且">
+<meta property="og:image" content="http://7u2ibm.com1.z0.glb.clouddn.com/normal1.jpeg">
+<meta property="og:image" content="http://7u2ibm.com1.z0.glb.clouddn.com/normal2.jpeg">
+<meta property="og:image" content="http://7u2ibm.com1.z0.glb.clouddn.com/error1.jpeg">
+<meta property="og:updated_time" content="2017-07-17T08:11:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="天生DR">
+<meta name="twitter:title" content="初探Weex iOS篇(一)">
+<meta name="twitter:description" content="iOS准备阶段  要在iOS端”玩起” Weex,至少要知道或者熟悉以下知识:   1.首先要清楚一件事情就是,Weex的UI是原生控件,并不是纯WebView，不是Hybrid方案!   2.其次得有相应的iOS开发知识,知道从前有一门叫 SmtallTalk,现在叫做Objective-C简称OC的编程语言(Swift也可以编写iOS程序,但是鉴于Weex代码是Objective-C版本,且">
+<meta name="twitter:image" content="http://7u2ibm.com1.z0.glb.clouddn.com/normal1.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="天生DR" type="application/atom+xml">
   
@@ -149,36 +158,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-weex-iOS" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/10/weex-iOS/" class="archive-article-date">
-  	<time datetime="2017-05-10T14:17:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/10/weex-iOS/">初探Weex iOS篇(一)</a>
+    <h1 class="article-title" itemprop="name">
+      初探Weex iOS篇(一)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/10/weex-iOS/" class="archive-article-date">
+  	<time datetime="2017-05-10T14:17:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><h2 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h2><p>  要在<code>iOS</code>端”玩起” <code>Weex</code>,至少要知道或者熟悉以下知识:</p>
+<p>  1.首先要清楚一件事情就是,<code>Weex</code>的UI是原生控件,并不是纯<code>WebView</code>，不是<code>Hybrid</code>方案!</p>
+<p>  2.其次得有相应的iOS开发知识,知道从前有一门叫 <code>SmtallTalk</code>,现在叫做<code>Objective-C</code>简称<code>OC</code>的编程语言(Swift也可以编写iOS程序,但是鉴于Weex代码是<code>Objective-C</code>版本,且项目中我们大量使用了<code>runtime</code>的特性,目前我们只讨论<code>OC</code>版)</p>
+<p>  3.知道iOS7 之后 Apple提供了一个叫 <code>JavaScriptCore</code> 的库。<code>JavaScriptCore</code>是<code>Webkit</code>的一个重要组成部分，主要是对JS进行解析和提供执行环境。极大的方便了我们对js的操作。我们可以脱离<code>Webview</code>直接运行我们的js。这也是 <code>Weex</code>,<code>React Native</code>,<code>JSPatch</code>这些框架能流行起来的重要原因。</p>
+<h2 id="剑神一笑"><a href="#剑神一笑" class="headerlink" title="剑神一笑"></a>剑神一笑</h2><p> <em>江湖有云: 武林至尊,宝刀屠龙，号令天下，莫敢不从。倚天不出，谁与争锋。</em></p>
+<p> 有个<code>JavaScriptCore</code>这把屠龙刀, 怎能没有倚天剑？这把倚天剑便是<code>runtime</code>,<code>BM-Weex</code>在<code>iOS</code>端无论在功能拓展性和代码结构的解耦上,都大量用到了这把”倚天剑”。</p>
+<p> 以前我们在开发iOS项目时,如果需要引用一些大的框架，如Facebook早期的<code>Three20</code>,他是自带了一个<code>Python</code>脚本。我们有新的定制化需求时,不能满足,早期的我们可能直接在其源码上做了修改。这样就局限了引用第三方版本的升级和Bug的官方修复,后来我们可以添加类别,类目等方式去实现需求,但是当不可避免修改源码时,问题又回到了开始的地方,其实可以利用<code>OC</code>的”动态语言”的特性，利用<code>AOP</code>的思想去实现方法前，后插入自定义代码或者直接进行“方法替换”,替换任何开源代码的实现。</p>
+<p> <code>BM-Weex</code>对<code>Weex</code>的二次封装 主要运用在项目的三个方面:</p>
+<p> 1.<code>Weex</code> 系统组件的功能拓展和Bug修复<br> 2.<code>Weex</code> 网络层的请求拦截实现 js 和 iconfont 的预加载<br> 3.<code>Weex</code> 自定义Module使用本地封装的功能 尽量做到Module的最小程度的修改和最大程度的复用</p>
+<p> 如果你已经有几年的iOS的Native开发经验，那么Weex对于你来说主需要了解它的思想即可，因为你可以用runtime进行大量“有趣”的尝试，就像是一个武林高手，例如西门吹雪用了倚天剑，效果你可以自己想象一下哈~</p>
+<h2 id="iOS上帝视角解读Weex"><a href="#iOS上帝视角解读Weex" class="headerlink" title="iOS上帝视角解读Weex"></a>iOS上帝视角解读Weex</h2><p><code>Weex</code> 在iOS端主要分为几个重要的模块 例如<code>WXSDKEngine</code>, <code>WXSDKInstance</code>, <code>WXBridgeManager</code>, <code>WXComponent</code>, <code>WXModuleProtocol</code>等，下面解读一下:</p>
+<p>1.<code>WXSDKEngine</code> 主要用于初始化WeexSDK的环境,加载<code>Weex</code>内置main.js文件以及<code>Weex</code>官方提供的Component,Module,Handler。<br>2.<code>WXSDKInstance</code> 一个 WXSDKInstance 对应一个Weex页面,如果是SPA应用,就对应一个ViewController,但是我们的大部分场景应该不是SPA,所以基本在<code>Weex</code>项目中，一个 WXSDKInstance 对应一个ViewController。<br>3.<code>WXBridgeManager</code>,<code>WXBridgeContext</code>,<code>WXJSCoreBridge</code>是JS与iOS进行交互的,所有JS与Native的交互都在这三个类的各层封装中。<br>4.<code>WXComponent</code> 组件基类，所以跟UI相关的，我们都得自己实现iOS端的组件，都必须继承于 <code>WXComponent</code><br>5.<code>WXImgLoaderProtocol</code> WeexSDK 默认没有实现图片加载，需要自己实<code>WXImgLoaderProtocol</code>协议,于此类似的还有networkprotocol,这样大大方便了开发者去自实现一些功能。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">UI Component</th>
+<th style="text-align:center">JS-OC 通信</th>
+<th style="text-align:center">自定义Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">WXImageComponent，WXTextComponent等</td>
+<td style="text-align:center">WXBridgeContext,WXJSCoreBridge等</td>
+<td style="text-align:center">WXDomModule等</td>
+</tr>
+</tbody>
+</table>
+<h2 id="实践自定义Component-Module"><a href="#实践自定义Component-Module" class="headerlink" title="实践自定义Component,Module"></a>实践自定义Component,Module</h2><p>1.安装<code>iOS开发环境</code> 及 <code>CocoaPods</code>，并集成<code>WeexSDK</code>到项目中。</p>
+<pre><code>&gt;iOS开发环境 及 CocoaPods 安装方式请查询官方文这里就不再赘述了；    
+&gt;WeexSDK 我们采用的是源码集成，也推荐大家采用源码的集成方式，一方面是因为 Weex 目前还处于初期 Beta 阶段，官方文档不完善，通过阅读源码可以更加深入的了解学习 Weex 的功能及底层实现原理；另一方面 Weex 本身也存在一些 bug 便于快速定位问题，方便在原有功能组件基础上进行定制化开发；    
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	源码集成方式</div><div class="line">	首先 拷贝 SDK 目录到你项目的根目录，然后在 Podfile 文件中添加</div><div class="line">*/</div><div class="line">pod &apos;WeexSDK&apos;, :path=&gt;&apos;./sdk/&apos;</div></pre></td></tr></table></figure>
+</code></pre><p>2.集成 <code>WXDevtool</code> 调试 SDK。    </p>
+<pre><code>&gt;`WXDevtool`也是官方提供的 SDK，结合 `weex-toolkit`脚手架工具，能够帮助你快速查看 app 运行状态和调试 Weex 中的 JS 代码；相信大家都使用过官方的 `Playground App`调试过 Weex 页面，为了方便调试项目，我们需要将 ‘扫一扫调试’ 功能集成到自己的项目中，客户端需要做的就是集成 `WXDevtool`,然后参照`Playground App`中的 `WXScannerVC`的实现，或者直接将 `WXScannerVC` 移植到自己的项目中。
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// Podfile</div><div class="line">pod &apos;WXDevtool&apos;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="Module扩展"><a href="#Module扩展" class="headerlink" title="Module扩展"></a>Module扩展</h3><p>官方已经为我们提供了一些內建模块，如：stream（提供网络请求）、navigator（页面导航及定义NavigationBar)、modal（提示框，Alert弹窗）等 module，在实际开发中需求是层出不穷的，使用內建module不足以支撑我们的需求，最好的做法就是我们根据业务需求自定义 module 这样易维护也容易扩展；在Weex上扩展 module 也是非常的简单；</p>
+<h3 id="自定义-Module-的步骤"><a href="#自定义-Module-的步骤" class="headerlink" title="自定义 Module 的步骤"></a>自定义 Module 的步骤</h3><p>1.自定义的module类 必须实现<code>WXModuleProtocol</code>。<br>2.必须添加宏<code>WX_EXPORT_METHOD</code>, 它可以被<code>Weex</code>识别，它的参数是 JavaScript调用 module指定方法的参数。<br>3.添加<code>@synthesized weexInstance</code>，每个moudle对象被绑定到一个指定的实例上。<br>4.Module 方法会在UI线程中被调用，所以不要做太多耗时的任务在这里，如果要在其他线程执行整个module 方法，需要实现。<code>WXModuleProtocol</code>中<code>- (NSThread *)targetExecuteThread</code>的方法，这样，分发到这个module的任务会在指定的线程中运行。<br>5.Weex 的参数可以是 String 或者Map。<br>6.Module 支持返回值给 JavaScript中的回调，回调的类型是<code>WXModuleCallback</code>,回调的参数可以是String或者Map。</p>
+<pre><code>&gt;JS 与 Native 端通过 Module 交互极其方便，参数可以是String、Map，灵活性也很高，建议采取Map的方式传值（js端将参数以键值对的方式传给 native 端），这样可以简短方法命，而且易扩展；    
+例子：BMAxiosNetworkModule 是我们自己实现的网络请求模块
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/* BMAxiosNetworkModule.h */</div><div class="line"></div><div class="line">// 实现 WXModuleProtocol 协议</div><div class="line">@interface BMAxiosNetworkModule : NSObject &lt;WXModuleProtocol, BMModuleProtocol&gt;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">/* BMAxiosNetworkModule.m */</div><div class="line"></div><div class="line">@implementation BMAxiosNetworkModule</div><div class="line"></div><div class="line">// 绑定 WXSDKInstance 实例</div><div class="line">@synthesize weexInstance;</div><div class="line"></div><div class="line">// 将方法暴露出去</div><div class="line">WX_EXPORT_METHOD(@selector(fetch:callback:)) </div><div class="line"></div><div class="line">/**</div><div class="line">	js调用 网络请求方法</div><div class="line">	@param info 字典类型(map):</div><div class="line">	&#123;</div><div class="line">   	method: &apos;GET&apos;             	// 请求类型 GET or POST</div><div class="line">   	url: &apos;&apos;,         		  	// 请求路径，前端自己拼好 host，发送完整请求 URL</div><div class="line">   	header: &#123;&#125;,               	// 请求 header</div><div class="line">   	noRepeat: true,           	// 请求是否允许重复，默认是 false，如果为 true，发现队列中有类似请求需要 cancel 掉</div><div class="line">   	data: &#123;&#125;                  	// 请求参数</div><div class="line">	&#125;</div><div class="line">	@param callback 回调js方法，将请求的数据返回给js处理</div><div class="line">	*/</div><div class="line">- (void)fetch:(NSDictionary *)info callback:(WXModuleCallback)callback</div><div class="line">&#123;</div><div class="line">   	// 解析请求信息</div><div class="line">   	BMAxiosRequestModel *requestModel = [BMAxiosRequestModel yy_modelWithJSON:info];</div><div class="line">   	</div><div class="line">   	// 根据业务需求 native 端处理一些请求 比如 拦截一些请求、统一添加一些参数 等</div><div class="line">   	[BMAxiosFilter axiosFilterRequestModel:requestModel];</div><div class="line">   	</div><div class="line">   	// BMCommonRequest 为 native 端实现的网络请求方法 </div><div class="line">   	BMCommonRequest *api = [[BMCommonRequest alloc] initWithRequestModel:requestModel];</div><div class="line">	</div><div class="line">	// 发送请求</div><div class="line">   	[api startRequestResult:^(id data) &#123;</div><div class="line">   		// 通过 callback 将处理好的请求数据回传给 js 端</div><div class="line">       	if (callback) &#123;</div><div class="line">         		callback(data);</div><div class="line">       	&#125;</div><div class="line">   	&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 注册module</div><div class="line">[WXSDKEngine registerModule:@&quot;bmAxios&quot; withClass:[BMAxiosNetworkModule class]];</div></pre></td></tr></table></figure>
+</code></pre><h3 id="Component扩展"><a href="#Component扩展" class="headerlink" title="Component扩展"></a>Component扩展</h3><p>官方已经为我们提供了常用的组件，这些组件目前可以支撑我们的App，我们在官方组件的基础上根据需求扩展了一些功能；<br>比如我们有个需求，用户可以动态设置字体大小，（标准、大号、特大三种选择）。</p>
+<p>方案1：<code>Weex</code>支持动态修改 styles，所以 js 端同学可以通过动态改变样式中的 fontSize 的值达到目的,但是使用<code>Text</code>标签的地方实在是太多了，而且后期一单需求变更 js 端同学估计得崩溃；</p>
+<p>方案2：Native 端实现；（恩，看来也只能这样了）。</p>
+<p>分析一下这个需求可以发现其实我们要解决两件事：<br>1.Text控件初始化的时候要根据用户选择设置字体大小；<br>2.已经存在的控件动态修改字体大小；<br>针对第一个问题：我们只需要在 WXTextComponent 的初始化方法<code>initWithRef:type:styles:attributes:events:weexInstance:</code>中，将 styles 中的 fontSize 修改成我们需要放大的值（根据当前环境将css定义的默认字体大小修改）；第二个问题：在初始化方式中注册修改字体的通知，然后触发 <code>_updateStylesOnComponentThread:resetStyles:isUpdateStyles:</code> 方法来更新样式即可；</p>
+<p>得益于 OC 强大的 <code>runtime</code> 机制,我们可以做到使用AOP的方式，在不修改源码的基础上修改 WXText 初始化方法；<br>实现<code>WXTextComponent</code>的 category <code>WXTextComponent+BMExtend</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//  WXTextComponent+BMExtend.h</div><div class="line"></div><div class="line">#import &lt;WeexSDK/WeexSDK.h&gt;</div><div class="line">#import &lt;WeexSDK/WXTextComponent.h&gt;</div><div class="line">@interface WXTextComponent (BMExtend)</div><div class="line">// 定义交互方法</div><div class="line">- (instancetype)bmText_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">//  WXTextComponent+BMExtend.m</div><div class="line"></div><div class="line">#import &quot;WXTextComponent+BMExtend.h&quot;</div><div class="line">#import &lt;WeexSDK/WXComponent_internal.h&gt;</div><div class="line"></div><div class="line">const void * _defaultFontSizeKey = &quot;bm_defaultFontSize&quot;;</div><div class="line"></div><div class="line">@implementation WXTextComponent (BMExtend)</div><div class="line">// 方法实现</div><div class="line">- (instancetype)bmText_initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</div><div class="line">&#123;</div><div class="line">    /* 注册修改字体通知 */</div><div class="line">    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeFontSize) name:K_CHANGE_FONT_SIZE_NOTIFICATION object:nil];</div><div class="line">    </div><div class="line">    /* 解析标准字体大小 */</div><div class="line">    NSMutableDictionary *dic4Styles = [NSMutableDictionary dictionaryWithDictionary:styles];</div><div class="line">    NSNumber *cssFontSize = dic4Styles[@&quot;fontSize&quot;];</div><div class="line">    CGFloat _defaultFontSize = [cssFontSize floatValue];</div><div class="line">        </div><div class="line">    /* 将css 定义的标准字体保存为属性 */</div><div class="line">    objc_setAssociatedObject(self, _defaultFontSizeKey, [NSNumber numberWithFloat:_defaultFontSize], OBJC_ASSOCIATION_RETAIN_NONATOMIC);</div><div class="line">        </div><div class="line">    /* 根据当前用户设置的字体大小 获取将要放大的字体大小 */</div><div class="line">    CGFloat changeFontSize = [self getChangeToFontSizeWithDefaultSize:_defaultFontSize];</div><div class="line">    </div><div class="line">    /* 修改styles中 fontSize 值为需要改变的字体大小 */</div><div class="line">    [dic4Styles setValue:[NSNumber numberWithFloat:changeFontSize] forKey:@&quot;fontSize&quot;];</div><div class="line">    styles = [NSDictionary dictionaryWithDictionary:dic4Styles];</div><div class="line">    </div><div class="line">    /* 调用 WXTextComponent 的初始化方法 */</div><div class="line">    return [self bmText_initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance];</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 修改字体大小通知返回方法 */</div><div class="line">- (void)changeFontSize</div><div class="line">&#123;</div><div class="line">	/* 获取之前保存的标准字体大小 */ </div><div class="line">    NSNumber *defaultSize = objc_getAssociatedObject(self, _defaultFontSizeKey);</div><div class="line">    if (!defaultSize) return;</div><div class="line">    </div><div class="line">    /* 根据当前用户设置的字体大小 获取将要放大的字体大小 */</div><div class="line">    CGFloat changeFontSize = [self getChangeToFontSizeWithDefaultSize:[defaultSize floatValue]];</div><div class="line">    </div><div class="line">    /* 构建 styles 调用更新样式的方法 */</div><div class="line">    NSDictionary *styles = @&#123;@&quot;fontSize&quot;: [NSNumber numberWithFloat:changeFontSize]&#125;;</div><div class="line">    [self _updateStylesOnComponentThread:styles resetStyles:[NSMutableArray array] isUpdateStyles:YES];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/* 替换 WXTextComponent 的初始化方法 利用runtime机制交换方法 */</div><div class="line">SEL oriSEL = @selector(initWithRef:type:styles:attributes:events:weexInstance:);</div><div class="line">Method originalM = class_getInstanceMethod([WXTextComponent class], oriSEL);</div><div class="line">SEL exchSEL = @selector(bmText_initWithRef:type:styles:attributes:events:weexInstance:);</div><div class="line">Method exchangeM = class_getInstanceMethod([WXTextComponent class], exchSEL);</div><div class="line">    </div><div class="line">BOOL addSucc = class_addMethod([WXTextComponent class], oriSEL, method_getImplementation(exchangeM), method_getTypeEncoding(exchangeM));</div><div class="line">if (addSucc) &#123;</div><div class="line">    class_replaceMethod([WXTextComponent class], exchSEL, method_getImplementation(originalM), method_getTypeEncoding(originalM));</div><div class="line">&#125; else &#123;</div><div class="line">   method_exchangeImplementations(originalM, exchangeM);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="竞品比较"><a href="#竞品比较" class="headerlink" title="竞品比较"></a>竞品比较</h2><p> 说Weex，就不得不提到Facebook的大作<code>React Native</code>,下边从几个角度对比一下:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类别</th>
+<th style="text-align:center">Weex</th>
+<th style="text-align:center">React Native</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">JS库</td>
+<td style="text-align:center">Vue.js</td>
+<td style="text-align:center">React.js</td>
+</tr>
+<tr>
+<td style="text-align:center">思想</td>
+<td style="text-align:center">write once, run anywhere</td>
+<td style="text-align:center">learn once, write anywhere</td>
+</tr>
+<tr>
+<td style="text-align:center">JS引擎</td>
+<td style="text-align:center">Android V8，iOS JSCore</td>
+<td style="text-align:center">iOS JSCore,Android(未知)</td>
+</tr>
+<tr>
+<td style="text-align:center">JS开发框架</td>
+<td style="text-align:center">Vue.JS 组件化 <br> 数据绑定<br> Virtual DOM<br> 模板就是普通的html，数据绑定使用mustache风格<br> 样式直接使用css</td>
+<td style="text-align:center">React.js 组件化<br> 数据绑定<br> Virtual DOM <br> JSX模板(学习使用有一定的成本)</td>
+</tr>
+<tr>
+<td style="text-align:center">布局</td>
+<td style="text-align:center">Flexbox的子集</td>
+<td style="text-align:center">Flexbox的子集</td>
+</tr>
+<tr>
+<td style="text-align:center">打包</td>
+<td style="text-align:center">默认打的js bundle只包含业务js代码，体积小很多，基础js库包含在Weex sdk中</td>
+<td style="text-align:center">只能将ReactNative基础js库和业务js一起打成一个js bundle，没有提供分包的功能，需要制作分包打包工具</td>
+</tr>
+<tr>
+<td style="text-align:center">跨平台</td>
+<td style="text-align:center">Weex可以支持Android iOS Web三个平台</td>
+<td style="text-align:center">支持Android iOS两个平台，需要自己扩展去支持Web，Windows和 Node-webkit的支持正在开发中</td>
+</tr>
+</tbody>
+</table>
+<p>通过对比可以得出Weex的优势</p>
+<ol>
+<li>轻量级的js框架 Vue 相当于 React 轻量的可不是一点半点</li>
+<li>打包可以将基础包和业务包分开,方便缩小业务代码的容量</li>
+<li>跨平台这块儿只能说 在Web端 比 React Native 强一些</li>
+</ol>
+<p>Weex的劣势:</p>
+<ol>
+<li><image>组件暂不支持本地图片，需指明width和height否则无法显示</image></li>
+<li>不支持z-index</li>
+<li>ListView 性能</li>
+</ol>
+<p>着重说下ListView的问题，从React Native的ListView的不复用,会造成内存和性能的问题,这个也是React Native一直以来最为诟病的组件，没有之一！！！</p>
+<p>那么我们来看一下 Weex的的 <code>list</code>实现:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@implementation WXListComponent</div><div class="line">&#123;</div><div class="line">    __weak UITableView * _tableView;</div><div class="line"></div><div class="line">    // Only accessed on component thread</div><div class="line">    NSMutableArray&lt;WXSection *&gt; *_sections;</div><div class="line">    // Only accessed on main thread</div><div class="line">    NSMutableArray&lt;WXSection *&gt; *_completedSections;</div><div class="line"></div><div class="line">    NSUInteger _previousLoadMoreRowNumber;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们可以看出 Weex的 WXListComponent 使用到了iOS特有的UITableView,这相比React Native的的ListView 只是  Scrollview 加了一些属性，在性能的提升上，肯定有了质的提升,但是会存在另外一个问题，我们首先看一下iOS端的代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">- (void)_insertSubcomponent:(WXComponent *)subcomponent atIndex:(NSInteger)index</div><div class="line">&#123;</div><div class="line">    // 子组件如果是cell</div><div class="line">    if ([subcomponent isKindOfClass:[WXCellComponent class]]) &#123;</div><div class="line">        ((WXCellComponent *)subcomponent).list = self;</div><div class="line"></div><div class="line">    // 子组件如果是header</div><div class="line">    &#125; else if ([subcomponent isKindOfClass:[WXHeaderComponent class]]) &#123;</div><div class="line">        ((WXHeaderComponent *)subcomponent).list = self;</div><div class="line"></div><div class="line">    // 除了上述两个，子组件只能是refresh 、loading或者fixed-component</div><div class="line">    &#125; else if (![subcomponent isKindOfClass:[WXRefreshComponent class]]</div><div class="line">               &amp;&amp; ![subcomponent isKindOfClass:[WXLoadingComponent class]]</div><div class="line">               &amp;&amp; subcomponent-&gt;_positionType != WXPositionTypeFixed) &#123;</div><div class="line">        WXLogError(@&quot;list only support cell/header/refresh/loading/fixed-component as child.&quot;);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    [super _insertSubcomponent:subcomponent atIndex:index];</div><div class="line"></div><div class="line">    // 构造section</div><div class="line">    NSIndexPath *indexPath = [self indexPathForSubIndex:index];</div><div class="line">    if (_sections.count &lt;= indexPath.section) &#123;</div><div class="line">        WXSection *section = [WXSection new];</div><div class="line">        if ([subcomponent isKindOfClass:[WXHeaderComponent class]]) &#123;</div><div class="line">            section.header = (WXHeaderComponent*)subcomponent;</div><div class="line">        &#125;</div><div class="line">        //TODO: consider insert header at middle</div><div class="line">        [_sections addObject:section];</div><div class="line">        NSUInteger index = [_sections indexOfObject:section];</div><div class="line">        // section的数目是有header和cell在template中出现的顺序决定的，具体可以查看函数`indexPathForSubIndex:`</div><div class="line">        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:index]; </div><div class="line">        WXSection *completedSection = [section copy];</div><div class="line"></div><div class="line">        // 这里很重要，当你最终组合除了indexSet之后，调用_tableView的`insertSections`来更新tableView。</div><div class="line">        [self.weexInstance.componentManager _addUITask:^&#123;</div><div class="line">            [_completedSections addObject:completedSection];</div><div class="line">            WXLogDebug(@&quot;Insert section:%ld&quot;,  (unsigned long)[_completedSections indexOfObject:completedSection]);</div><div class="line">            [UIView performWithoutAnimation:^&#123;</div><div class="line">                [_tableView insertSections:indexSet withRowAnimation:UITableViewRowAnimationNone];</div><div class="line">            &#125;];</div><div class="line">        &#125;];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>从上述代码可以看出:list组件的子组件只能是cell、header、refresh、loading已经fixed-component,这样的规定可能让一些开发者觉得很不舒服,还有就是header组件,在目前的项目的实际开发中还存在一些Bug,部分截图如下:</p>
+<p><img src="http://7u2ibm.com1.z0.glb.clouddn.com/normal1.jpeg" alt="正常图1"></p>
+<p><img src="http://7u2ibm.com1.z0.glb.clouddn.com/normal2.jpeg" alt="正常图2"></p>
+<p><img src="http://7u2ibm.com1.z0.glb.clouddn.com/error1.jpeg" alt="错误图1"></p>
+<p>我们能看的出来,最后一张图的“下午号源”的header “莫名其妙”的丢失了,类似这样的问题在Weex中 还比较常见，我们的客户端团队也在解决中大量类似的问题~</p>
+<p>还有我们在iOS 客户端使用UITableView的流程应该为</p>
+<blockquote>
+<ol>
+<li>请求/准备 数据</li>
+<li>reaload tableview</li>
+</ol>
+</blockquote>
+<p>但是我们细看Weex的List源码 存在大量的刷新,就会出现频繁调用 <code>reloadRowsAtIndexPaths</code>、<code>insertRowsAtIndexPaths</code>、<code>deleteRowsAtIndexPaths</code>等类似的方法，每个子组件的出现会让tableview发生变化,目前笔者了解的情况，这是Weex机制决定的。</p>
+<p>尚未有好的解决方案或者说解决回来会是一个很大的工程,也希望Weex官方跟进去解决这个问题。</p>
+<p>相比这个很“致命”的问题，React Native在最新的0.43.0版本推出了 FlatList 这个组件，这个相比之前的ListView有了很大的性能提升,所以Weex组件在丰富和稳定性的道路上，显得任重而道远~吧           </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -190,7 +354,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -203,76 +367,87 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/10/weex-iOS/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/31/zongjie/" class="archive-article-date">
-  	<time datetime="2016-12-31T14:17:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/31/zongjie/">这个世界会好吗？</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/年终总结/" class="article-tag-list-link color5">年终总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/31/zongjie/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">这个世界会好吗？</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -295,8 +470,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
