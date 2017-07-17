@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://7u2ibm.com1.z0.glb.clouddn.com/normal1.jpeg">
 <meta property="og:image" content="http://7u2ibm.com1.z0.glb.clouddn.com/normal2.jpeg">
 <meta property="og:image" content="http://7u2ibm.com1.z0.glb.clouddn.com/error1.jpeg">
-<meta property="og:updated_time" content="2017-07-17T11:55:21.000Z">
+<meta property="og:updated_time" content="2017-07-17T11:57:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探Weex iOS篇(一)">
 <meta name="twitter:description" content="iOS准备阶段  要在iOS端”玩起” Weex,至少要知道或者熟悉以下知识:   1.首先要清楚一件事情就是,Weex的UI是原生控件,并不是纯WebView，不是Hybrid方案!   2.其次得有相应的iOS开发知识,知道从前有一门叫 SmtallTalk,现在叫做Objective-C简称OC的编程语言(Swift也可以编写iOS程序,但是鉴于Weex代码是Objective-C版本,且">
@@ -201,9 +201,8 @@
 <p>  WeexSDK 我们采用的是源码集成，也推荐大家采用源码的集成方式，一方面是因为 Weex 目前还处于初期 Beta 阶段，官方文档不完善，通过阅读源码可以更加深入的了解学习 Weex 的功能及底层实现原理；另一方面 Weex 本身也存在一些 bug 便于快速定位问题，方便在原有功能组件基础上进行定制化开发；    </p>
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	源码集成方式</div><div class="line">	首先 拷贝 SDK 目录到你项目的根目录，然后在 Podfile 文件中添加</div><div class="line">*/</div><div class="line">pod &apos;WeexSDK&apos;, :path=&gt;&apos;./sdk/&apos;</div></pre></td></tr></table></figure>
 </code></pre><p>2.集成 <code>WXDevtool</code> 调试 SDK。    </p>
-<pre><code>`WXDevtool`也是官方提供的 SDK，结合 `weex-toolkit`脚手架工具，能够帮助你快速查看 app 运行状态和调试 Weex 中的 JS 代码；相信大家都使用过官方的 `Playground App`调试过 Weex 页面，为了方便调试项目，我们需要将 ‘扫一扫调试’ 功能集成到自己的项目中，客户端需要做的就是集成 `WXDevtool`,然后参照`Playground App`中的 `WXScannerVC`的实现，或者直接将 `WXScannerVC` 移植到自己的项目中。
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// Podfile</div><div class="line">pod &apos;WXDevtool&apos;</div></pre></td></tr></table></figure>
+<p><code>WXDevtool</code>也是官方提供的 SDK，结合 <code>weex-toolkit</code>脚手架工具，能够帮助你快速查看 app 运行状态和调试 Weex 中的 JS 代码；相信大家都使用过官方的 <code>Playground App</code>调试过 Weex 页面，为了方便调试项目，我们需要将 ‘扫一扫调试’ 功能集成到自己的项目中，客户端需要做的就是集成 <code>WXDevtool</code>,然后参照<code>Playground App</code>中的 <code>WXScannerVC</code>的实现，或者直接将 <code>WXScannerVC</code> 移植到自己的项目中。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// Podfile</div><div class="line">pod &apos;WXDevtool&apos;</div></pre></td></tr></table></figure>
 </code></pre><h3 id="Module扩展"><a href="#Module扩展" class="headerlink" title="Module扩展"></a>Module扩展</h3><p>官方已经为我们提供了一些內建模块，如：stream（提供网络请求）、navigator（页面导航及定义NavigationBar)、modal（提示框，Alert弹窗）等 module，在实际开发中需求是层出不穷的，使用內建module不足以支撑我们的需求，最好的做法就是我们根据业务需求自定义 module 这样易维护也容易扩展；在Weex上扩展 module 也是非常的简单；</p>
 <h3 id="自定义-Module-的步骤"><a href="#自定义-Module-的步骤" class="headerlink" title="自定义 Module 的步骤"></a>自定义 Module 的步骤</h3><p>1.自定义的module类 必须实现<code>WXModuleProtocol</code>。<br>2.必须添加宏<code>WX_EXPORT_METHOD</code>, 它可以被<code>Weex</code>识别，它的参数是 JavaScript调用 module指定方法的参数。<br>3.添加<code>@synthesized weexInstance</code>，每个moudle对象被绑定到一个指定的实例上。<br>4.Module 方法会在UI线程中被调用，所以不要做太多耗时的任务在这里，如果要在其他线程执行整个module 方法，需要实现。<code>WXModuleProtocol</code>中<code>- (NSThread *)targetExecuteThread</code>的方法，这样，分发到这个module的任务会在指定的线程中运行。<br>5.Weex 的参数可以是 String 或者Map。<br>6.Module 支持返回值给 JavaScript中的回调，回调的类型是<code>WXModuleCallback</code>,回调的参数可以是String或者Map。</p>
 <p>JS 与 Native 端通过 Module 交互极其方便，参数可以是String、Map，灵活性也很高，建议采取Map的方式传值（js端将参数以键值对的方式传给 native 端），这样可以简短方法命，而且易扩展；<br>    例子：BMAxiosNetworkModule 是我们自己实现的网络请求模块</p>
